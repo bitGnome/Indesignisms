@@ -1,0 +1,6 @@
+Questions.
+
+If possible it would be good to have a fabic_copy character style for the fabric copy. Event if it does not have any style overrides.
+Other wise I need to make some assumptions that will work on this book but may break going forward.
+
+The bugs will need to have a character style applied to them hard to filter out the space from the embedded image.
