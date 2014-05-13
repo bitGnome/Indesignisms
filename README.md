@@ -7,5 +7,5 @@ Helpful InDesign scripts for specific needs
 To use this script you must copy or link this script into
 ~/Library/Preferences/Adobe InDesign/Version 8.0/en_US/Scripts/Scripts Panel/
 
-### workbook_text_export
-This script will loop through paragraph and text styles to extract copy.
+## workbook_text_export
+Script to loop through paragraph and text styles to extract copy. Output file will be pipe delimited.
