@@ -106,7 +106,7 @@ function SpecLine(paragraph) {
         character_style = target_text.appliedCharacterStyle.name;
 
         if (character_style == product_number_character_style) {
-            spec_line.push(target_text.contents);
+            spec_line.push(target_text.contents.replace(/[^0-9]+/g, ''));
         }
     }
 
