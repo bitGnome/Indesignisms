@@ -82,8 +82,11 @@ function exportWorkbookCopy(output_file_location) {
             }
         }
 
-        if (!isEmpty(spec_line)) {
-            output.writeln(spec_line.product_number + field_delimiter + overview_copy + field_delimiter + fabric_copy + field_delimiter + features.join(field_delimiter));
+        if (spec_line.length > 0) {
+            // Output a line for each product number found in the spec line
+            for (var index = 0; index < spec_line.length; index++) {
+                output.writeln(spec_line[index] + field_delimiter + overview_copy + field_delimiter + fabric_copy + field_delimiter + features.join(field_delimiter));
+            }
         }
     }
 
@@ -94,7 +97,7 @@ function exportWorkbookCopy(output_file_location) {
 
 function SpecLine(paragraph) {
 
-    spec_line = {};
+    spec_line = [];
     product_number_character_style = 'Product Number'
 
     for(var y=0; y<paragraph.textStyleRanges.length; y++) {
@@ -103,7 +106,7 @@ function SpecLine(paragraph) {
         character_style = target_text.appliedCharacterStyle.name;
 
         if (character_style == product_number_character_style) {
-            spec_line.product_number = target_text.contents;
+            spec_line.push(target_text.contents);
         }
     }
 
